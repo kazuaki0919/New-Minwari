@@ -39,12 +39,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("生の金額：", moneyTextField.text!)
         print("生の人数：", peopleTextField.text!)
         
-        //ここの処理から追加
+        //　エラーのアラート表示
         if (moneyTextField.text! == "") || (peopleTextField.text! == "") {
-            let alert = UIAlertController(title: "計算エラー", message: "未入力の項目があります。\nもう一度確かめてください。", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self.present(alert, animated: true, completion: nil)
-        } else {
+            // 未入力の項目がある時のアラート表示
+            let alert = UIAlertController(title: "入力エラー", message: "未入力の項目があります。\nもう一度確かめてください。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        } else if (moneyTextField.text! == "0") || (peopleTextField.text! == "0") {
+            // どちらかの値が0のときのアラート表示
+            let alert = UIAlertController(title: "値エラー", message: "値”0”が入力されています。\nもう一度確かめてください。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        } else {  // 正常の時は計算する
             // 計算処理
             calculating_process()
             
