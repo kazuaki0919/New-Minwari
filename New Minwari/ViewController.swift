@@ -33,8 +33,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // delegateをselfに設定
         moneyTextField.delegate = self
         peopleTextField.delegate = self
-        
-        
     }
     
     @IBAction func touchButton1(_ sender: Any) {
@@ -43,8 +41,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // 計算処理
         calculating_process()
+        
+        // キーボードをしまう
+        self.view.endEditing(true)
     }
     
+    @IBAction func resetButton(_ sender: Any) {
+        // 変数初期化
+        (inputMoney, moneyNum) = ("", 0)
+        (inputPeople, peopleNum) = ("", 0)
+        resultMoney = 0
+        fracNum = 0
+        
+        // TextFieldの初期化
+        moneyTextField.text! = ""
+        peopleTextField.text! = ""
+        
+        //　初期化がの変数をラベルに表示
+        moneyLabel.text = String(resultMoney!)
+        fracLabel.text = String(fracNum!)
+    }
     
     // 計算処理
     func calculating_process() {
