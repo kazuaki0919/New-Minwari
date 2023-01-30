@@ -27,6 +27,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var fracLabel: UILabel!
     var fracNum :Int! = 0
     
+    //　segment用フラグ変数
+    var segmentFlag : Int! = 0
+    
+    //　10のケタ計算用変数
+    var tenResultMoney :Int!
+    
+    //　100のケタ計算用変数
+    var hndResultMoney :Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +44,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         peopleTextField.delegate = self
     }
     
+    // 割り勘の桁数選択セグメント
+    @IBAction func digitnumSelection(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                segmentFlag = 0
+                print("フラグ変数：", segmentFlag!)
+            case 1:
+                segmentFlag = 1
+                print("フラグ変数：", segmentFlag!)
+            case 2:
+                segmentFlag = 2
+                print("フラグ変数：", segmentFlag!)
+            default:
+                print("存在しない番号")
+        }
+    }
+    
+    // 割り勘ボタン
     @IBAction func touchButton(_ sender: Any) {
         print("生の金額：", moneyTextField.text!)
         print("生の人数：", peopleTextField.text!)
@@ -57,9 +84,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             // キーボードをしまう
             self.view.endEditing(true)
         }
-        //ここまで
-        
-        
     }
     
     @IBAction func resetButton(_ sender: Any) {
@@ -94,16 +118,47 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //String型をIntに変換
         peopleNum = Int(inputPeople)
         print("変換した人数：", peopleNum!)
-
-        // 計算処理
-        resultMoney = moneyNum / peopleNum
-        moneyLabel.text = String(resultMoney!)
-        print("計算結果：", resultMoney!)
         
-        // 端数処理
-        fracNum = moneyNum % peopleNum
-        fracLabel.text = String(fracNum!)
-        print("端数：", fracNum!)
+        //桁数処理
+        switch segmentFlag {
+            case 0:  // 1の桁で計算
+                // 計算処理
+                resultMoney = moneyNum / peopleNum
+                moneyLabel.text = String(resultMoney!)
+                print("計算結果：", resultMoney!)
+                
+                // 端数処理
+                fracNum = moneyNum % peopleNum
+                fracLabel.text = String(fracNum!)
+                print("端数：", fracNum!)
+            case 1:  // 10の桁で計算
+                // 計算処理
+                tenResultMoney = moneyNum / peopleNum
+                resultMoney = tenResultMoney - (tenResultMoney % 10)
+                moneyLabel.text = String(resultMoney!)
+                print("計算結果：", resultMoney!)
+                
+                // 端数処理
+                fracNum = moneyNum - (resultMoney * peopleNum)
+                fracLabel.text = String(fracNum!)
+                print("端数：", fracNum!)
+            case 2:  // 100の桁で計算
+            // 計算処理
+            hndResultMoney = moneyNum / peopleNum
+            resultMoney = hndResultMoney - (tenResultMoney % 100)
+            moneyLabel.text = String(resultMoney!)
+            print("計算結果：", resultMoney!)
+            
+            // 端数処理
+            fracNum = moneyNum - (resultMoney * peopleNum)
+            fracLabel.text = String(fracNum!)
+            print("端数：", fracNum!)
+            default:
+                // 計算エラーのときのアラート表示
+                let alert = UIAlertController(title: "計算エラー", message: "計算がうまくいきませんでした。\nもう一度確かめてください。", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 
