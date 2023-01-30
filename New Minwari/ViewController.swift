@@ -21,9 +21,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // 金額表示ラベル
     @IBOutlet var moneyLabel: UILabel!
-    
-    
     var resultMoney :Int! = 0
+    
+    // 端数表示ラベル
+    @IBOutlet var fracLabel: UILabel!
+    var fracNum :Int! = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +67,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         resultMoney = moneyNum / peopleNum
         moneyLabel.text = String(resultMoney!)
         print("計算結果：", resultMoney!)
+        
+        // 端数処理
+        fracNum = moneyNum % peopleNum
+        fracLabel.text = String(fracNum!)
+        print("端数：", fracNum!)
     }
 }
 

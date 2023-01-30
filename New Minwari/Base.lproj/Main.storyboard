@@ -107,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fRN-C7-AMv"/>
                     <connections>
+                        <outlet property="fracLabel" destination="x1X-BY-ARD" id="oro-gA-Gnc"/>
                         <outlet property="moneyLabel" destination="o5d-9n-B5I" id="bg4-vT-aQT"/>
                         <outlet property="moneyTextField" destination="5Xe-tQ-6Ri" id="Kxe-Y6-Byi"/>
                         <outlet property="peopleTextField" destination="jwV-ND-kV4" id="J4x-Dg-3O5"/>
