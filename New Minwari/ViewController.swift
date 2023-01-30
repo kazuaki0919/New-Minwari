@@ -35,15 +35,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
         peopleTextField.delegate = self
     }
     
-    @IBAction func touchButton1(_ sender: Any) {
+    @IBAction func touchButton(_ sender: Any) {
         print("生の金額：", moneyTextField.text!)
         print("生の人数：", peopleTextField.text!)
         
-        // 計算処理
-        calculating_process()
+        //ここの処理から追加
+        if (moneyTextField.text! == "") || (peopleTextField.text! == "") {
+            let alert = UIAlertController(title: "計算エラー", message: "未入力の項目があります。\nもう一度確かめてください。", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(alert, animated: true, completion: nil)
+        } else {
+            // 計算処理
+            calculating_process()
+            
+            // キーボードをしまう
+            self.view.endEditing(true)
+        }
+        //ここまで
         
-        // キーボードをしまう
-        self.view.endEditing(true)
+        
     }
     
     @IBAction func resetButton(_ sender: Any) {
