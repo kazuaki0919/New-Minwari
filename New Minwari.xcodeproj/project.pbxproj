@@ -13,6 +13,7 @@
 		725B24BD2987AD8400623BB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 725B24BB2987AD8400623BB1 /* Main.storyboard */; };
 		725B24BF2987AD8400623BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 725B24BE2987AD8400623BB1 /* Assets.xcassets */; };
 		725B24C22987AD8400623BB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 725B24C02987AD8400623BB1 /* LaunchScreen.storyboard */; };
+		72689DAF29890B78005C14EB /* 4.7inch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72689DAE29890B78005C14EB /* 4.7inch.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		725B24BE2987AD8400623BB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		725B24C12987AD8400623BB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		725B24C32987AD8400623BB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72689DAE29890B78005C14EB /* 4.7inch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 4.7inch.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				725B24B72987AD8400623BB1 /* SceneDelegate.swift */,
 				725B24B92987AD8400623BB1 /* ViewController.swift */,
 				725B24BB2987AD8400623BB1 /* Main.storyboard */,
+				72689DAE29890B78005C14EB /* 4.7inch.storyboard */,
 				725B24BE2987AD8400623BB1 /* Assets.xcassets */,
 				725B24C02987AD8400623BB1 /* LaunchScreen.storyboard */,
 				725B24C32987AD8400623BB1 /* Info.plist */,
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72689DAF29890B78005C14EB /* 4.7inch.storyboard in Resources */,
 				725B24C22987AD8400623BB1 /* LaunchScreen.storyboard in Resources */,
 				725B24BF2987AD8400623BB1 /* Assets.xcassets in Resources */,
 				725B24BD2987AD8400623BB1 /* Main.storyboard in Resources */,
@@ -286,23 +290,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = M94AKK69S5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "New Minwari/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "みん割！";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.namickey0919.New-Minwari";
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.namickey0919.Minwari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -319,23 +324,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = M94AKK69S5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "New Minwari/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "みん割！";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.namickey0919.New-Minwari";
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.namickey0919.Minwari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
